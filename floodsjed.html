@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jeddah Flood Alert System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background-color: #f0f8ff;
+    }
+    #status {
+      font-size: 24px;
+      margin-top: 20px;
+      color: green;
+    }
+    .alert {
+      color: red;
+      font-weight: bold;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Smart Flood Alert System</h1>
+  <p>Click the button to simulate water level detection.</p>
+  <button onclick="checkWaterLevel()">Simulate Water Level</button>
+  <div id="status">System Normal</div>
+
+  <script>
+    function checkWaterLevel() {
+      // Simulate water level (random number)
+      var level = Math.floor(Math.random() * 100); // 0 to 99
+      var status = document.getElementById("status");
+
+      if (level > 60) {
+        status.innerHTML = "ALERT! High Water Level Detected: " + level + "%";
+        status.className = "alert";
+      } else {
+        status.innerHTML = "Water Level Normal: " + level + "%";
+        status.className = "";
+      }
+    }
+  </script>
+</body>
+</html>
